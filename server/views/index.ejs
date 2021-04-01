@@ -1,0 +1,21 @@
+<!--COMP229-w2021-TeamProject server/views/index.ejs; Dominators; 19Mar2021 -->
+
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+  
+<%- include partials/welcome_title.ejs %>
+
+<!--Use if statements to route to different content pages -->
+<% if (title == "Home") { %>
+  <%- include pages/home.ejs %>
+  <% } %>
+  
+<%- include partials/bottom_nav.ejs %>  
+
+<%- include partials/footer.ejs %>
+  
+
+
+
+
