@@ -1,4 +1,4 @@
-<!--COMP229-w2021-Assignment2 server/views/pages/home.ejs; Ho Yin LAI; StudentID 301162000; 28Feb2021 -->
+<!--COMP229-w2021-TeamProject server/views/pages/home.ejs; Dominators; 31Mar2021 -->
 <!-- Home content -->   
 
 <div class="container">
@@ -8,7 +8,11 @@
         <img src="Assets/images/logo.png" alt="Selfie" style="width: 200px; height:200px;  vertical-align:top;margin:15px 50px">
         <br>Here is the Create Survey Site to help you create your own Survey.
         <br><br>
-        <a class="btn btn-warning btn-lg" href="/surveylist/add" role="button">Create A Survey</a>
+        <% if(typeof displayName == 'string' && displayName) { %>
+            <a class="btn btn-warning btn-lg" href="/surveylist/add" role="button">Create A Survey</a>
+        <% } else { %>
+            <a class="btn btn-warning btn-lg" href="/user/register" role="button">Create A Survey</a>
+        <% } %>
         <a class="btn btn-info btn-lg" href="/surveylist" role="button">Survey List</a>
 
         <br>
