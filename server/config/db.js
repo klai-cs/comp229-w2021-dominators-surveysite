@@ -1,4 +1,13 @@
-/*--COMP229-w2021-TeamProject server/config/db.js; Dominators; 31Mar2021 */
+/*
+  --COMP229-w2021-TeamProject server/config/db.js;
+  --Group Name:  Dominators 
+  --Date Created: 02, April, 2021 
+  --Student Name: Ho Yin Lai - 301162000
+  --Student Name: Laxman Gothe - 301102988
+  --Student Name: Sissi Kan - 301170042
+  --Student Name: Arpit Kamal - 301152116
+  --Student Name: Janesha Sharma - 301093302
+  */
 
 //define database URI
 module.exports =
