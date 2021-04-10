@@ -1,0 +1,89 @@
+  <!--/*
+  --COMP229-w2021-TeamProject server/views/survey/fill.ejs;
+  --Group Name:  Dominators 
+  --Date Created: 10, April, 2021 
+  --Student Name: Ho Yin Lai - 301162000
+  --Student Name: Laxman Gothe - 301102988
+  --Student Name: Sissi Kan - 301170042
+  --Student Name: Arpit Kamal - 301152116
+  --Student Name: Janesha Sharma - 301093302
+  */ -->
+
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<!-- Content for the Fill Survey page -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="bs-component">
+        <div class="offset-md-3 col-md-6 "></div>
+        <h1 class="text-center"><%= survey.name %></h1>
+
+        <form class="form" method="POST">
+            <br><br>
+        
+            <div class="form-group">
+                <label for="a1TextField"><%= survey.q1 %></label>
+                <input type="text" class="form-control"
+                id="a1TextField"
+                placeholder="Answer Question 1"
+                name="a1"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="a2TextField"><%= survey.q2 %></label>
+                <input type="text" class="form-control"
+                id="a2TextField"
+                placeholder="Answer Question 2"
+                name="a2" 
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="a3TextField"><%= survey.q3 %></label>
+                <input type="text" class="form-control"
+                id="a3TextField"
+                placeholder="Answer Question 3"
+                name="a3" 
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="a4TextField"><%= survey.q4 %></label>
+                <input type="text" class="form-control"
+                id="a4TextField"
+                placeholder="Answer Question 4"
+                name="a4" 
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="a5TextField"><%= survey.q5 %></label>
+                <input type="text" class="form-control"
+                id="a5TextField"
+                placeholder="Answer Question 5"
+                name="a5" 
+                >
+            </div>
+          
+           <button class="btn btn-primary" type="submit">
+            <i class="fas fa-edit"></i> Submit</button> 
+
+            <a href="/surveylist" class="btn btn-warning">
+                <i class="fas fa-undo"></i> Cancel</a>
+            
+            <br><br><br><br>
+        </form>
+    </div>
+</div>
+    </div>
+</div>
+
+
+
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>

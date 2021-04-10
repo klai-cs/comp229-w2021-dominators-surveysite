@@ -1,0 +1,78 @@
+  <!--/*
+  --COMP229-w2021-TeamProject server/views/survey/list.ejs;
+  --Group Name:  Dominators 
+  --Date Created: 02, April, 2021 
+  --Student Name: Ho Yin Lai - 301162000
+  --Student Name: Laxman Gothe - 301102988
+  --Student Name: Sissi Kan - 301170042
+  --Student Name: Arpit Kamal - 301152116
+  --Student Name: Janesha Sharma - 301093302
+  */ -->
+
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+  
+
+  <!-- Survey List content -->
+  <main class="container">
+     <div class="row">
+    <div class="col-lg-12">
+        <div class="bs-component">
+            <h1 class="text-center "><%= title %></h1>
+
+            <% if(typeof displayName == 'string' && displayName) { %>
+                <a href="/surveylist/add" class="btn btn-primary btn-block" role="button">
+                <i class="fas fa-plus-circle text-center"> Create a Survey</i> </a>
+            <% } %>
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+            <!-- Heading Row-->
+            <tr class="d-flex">
+                <% if(typeof displayName == 'string' && displayName) { %>
+                    <th class="text-align: left col-6">Active Survey Name</th>
+                    <th class="text-center col-2"></th>
+                    <th class="text-center col-2"></th>
+                    <th class="text-center col-2"></th>
+                <% } else { %>
+                    <th class="text-align: left col-6">Active Survey Name</th>
+                    <th class="text-center col-6"></th>  
+                <% } %>
+            </tr>
+
+            <!-- Repeatable Templete Row-->
+
+            <% for(let count =0; count < SurveyList.length; count++) { %>
+                <tr class="d-flex">
+                    <% if(typeof displayName == 'string' && displayName) { %>
+                        <td class="text-align: left col-6"><%= SurveyList[count].name %></td>
+                        <td class="text-center col-2">
+                            <a href="/surveylist/fill/<%= SurveyList[count]._id %>" class="btn btn-primary btn-sm">
+                            <i class="far fa-comment-alt"></i> Take Survey</a>
+                        </td>
+                        <td class="text-center col-2">
+                            <a href="/surveylist/edit/<%= SurveyList[count]._id %>" class="btn btn-warning btn-sm">
+                            <i class="fas fa-pencil-alt"></i> Edit Survey</a>
+                        </td>
+                        <td class="text-center col-2">
+                            <a href="/surveylist/delete/<%= SurveyList[count]._id %>" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i> Delete Survey</a>
+                        </td>
+                    <% } else { %>
+                        <td class="text-align: left col-6"><%= SurveyList[count].name %></td>
+                        <td class="text-center col-6">
+                            <a href="/surveylist/fill/<%= SurveyList[count]._id %>" class="btn btn-primary btn-sm">
+                            <i class="far fa-comment-alt"></i> Take Survey</a>
+                     <% } %>
+                </tr>
+            <% } %>
+        </table>
+        </div>
+    </div>
+    </div>
+  </main>
+  
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>
+  

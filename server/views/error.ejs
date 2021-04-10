@@ -1,0 +1,26 @@
+  <!--/*
+  --COMP229-w2021-TeamProject server/views/error.ejs;
+  --Group Name:  Dominators 
+  --Date Created: 02, April, 2021 
+  --Student Name: Ho Yin Lai - 301162000
+  --Student Name: Laxman Gothe - 301102988
+  --Student Name: Sissi Kan - 301170042
+  --Student Name: Arpit Kamal - 301152116
+  --Student Name: Janesha Sharma - 301093302
+  */ -->
+
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+
+<!--Error Content -->
+<div class="container">
+    <h1><%= message %></h1>
+    <h2><%= error.status %></h2>
+    <pre><%= error.stack %></pre>
+</div>
+
+
+<%- include partials/bottom_nav.ejs %>
+
+<%- include partials/footer.ejs %>

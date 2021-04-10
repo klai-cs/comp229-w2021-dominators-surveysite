@@ -1,0 +1,51 @@
+  <!--/*
+  --COMP229-w2021-TeamProject server/views/survey/mysurvey.ejs;
+  --Group Name:  Dominators 
+  --Date Created: 10, April, 2021 
+  --Student Name: Ho Yin Lai - 301162000
+  --Student Name: Laxman Gothe - 301102988
+  --Student Name: Sissi Kan - 301170042
+  --Student Name: Arpit Kamal - 301152116
+  --Student Name: Janesha Sharma - 301093302
+  */ -->
+
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+  
+
+  <!-- Survey List content -->
+ <main class="container">
+     <div class="row">
+    <div class="col-lg-12">
+        <div class="bs-component">
+            <h1 class="text-center "><%= title %></h1>
+
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+            <!-- Heading Row-->
+            <tr class="d-flex">
+                    <th class="text-align: left col-8">Active Survey Name</th>
+                    <th class="text-center col-4"></th>  
+            </tr>
+
+            <!-- Repeatable Templete Row-->
+
+            <% for(let count =0; count < SurveyList.length; count++) { %>
+                <tr class="d-flex">
+                        <td class="text-align: left col-8"><%= SurveyList[count].name %></td>
+                        <td class="text-center col-4">
+                            <a href="/surveylist/surveyinfo/<%= SurveyList[count]._id %>" class="btn btn-primary btn-sm">
+                            <i class="far fa-comment-alt"></i> All response</a>
+                </tr>
+            <% } %>
+        </table>
+        </div>
+    </div>
+    </div>
+  </main>
+  
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>
+  

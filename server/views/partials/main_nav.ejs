@@ -1,0 +1,76 @@
+  <!--/*
+  --COMP229-w2021-TeamProject server/views/partials/main_nav.ejs;
+  --Group Name:  Dominators 
+  --Date Created: 10, April, 2021 
+  --Student Name: Ho Yin Lai - 301162000
+  --Student Name: Laxman Gothe - 301102988
+  --Student Name: Sissi Kan - 301170042
+  --Student Name: Arpit Kamal - 301152116
+  --Student Name: Janesha Sharma - 301093302
+  */ -->
+
+<!-- Main Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">
+  <img src="../../Assets/images/logo.png" width="60" height="60" alt="">
+    Create Survey Site
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto ">
+
+      <% if (title == "Home"){ %>
+      <li class="nav-item active">
+      <% } else  { %>
+      <li class="nav-item">
+      <% } %>
+        <a class="nav-link" href="/home"><i class="fas fa-lg fa-laptop-house"></i> Home </a>
+      </li>
+
+      <% if (title == "Create A Survey") { %>
+      <li class="nav-item active">
+      <% } else  { %>
+      <li class="nav-item">
+      <% } %>
+         <% if(typeof displayName == 'string' && displayName) { %>
+          <a class="nav-link" href="/surveylist/add"><i class="fas fa-lg fa-edit"></i> Create Survey </a>
+        <% } else { %>
+          <a class="nav-link" href="/user/login"><i class="fas fa-lg fa-edit"></i> Create Survey </a>
+        <% } %>
+      </li>
+
+      <% if (title == "My Survey") { %>
+      <li class="nav-item active">
+      <% } else  { %>
+      <li class="nav-item">
+      <% } %>
+        <a class="nav-link" href="/surveylist/mysurvey"><i class="fas fa-lg fa-book"></i> My Survey </a>
+      </li>
+
+
+      <% if (title == "Survey List") { %>
+      <li class="nav-item active">
+      <% } else  { %>
+      <li class="nav-item">
+      <% } %>
+        <a class="nav-link" href="/surveylist"><i class="fas fa-lg fa-book"></i> All Survey </a>
+      </li>
+
+      <% if(typeof displayName=='string' && displayName) { %>
+        <li class="navbar-text"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %>
+        </li>
+        <li class="nav-item"><a href="/user/logout" class="nav-link">
+            <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+        <% } else { %>
+          <li class="nav-item"><a href="/user/login" class="nav-link">
+              <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+          <% } %>
+          </ul>
+
+
+  </div>
+</nav>

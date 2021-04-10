@@ -1,0 +1,60 @@
+  <!--/*
+  --COMP229-w2021-TeamProject server/views/survey/surveyinfo.ejs;
+  --Group Name:  Dominators 
+  --Date Created: 02, April, 2021 
+  --Student Name: Ho Yin Lai - 301162000
+  --Student Name: Laxman Gothe - 301102988
+  --Student Name: Sissi Kan - 301170042
+  --Student Name: Arpit Kamal - 301152116
+  --Student Name: Janesha Sharma - 301093302
+  */ -->
+
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+  
+
+  <!-- Survey List content -->
+   <main class="container">
+     <div class="row">
+    <div class="col-lg-12">
+        <div class="bs-component">
+            <h1 class="text-center "><%= title %></h1>
+            <p style="text-align: left; font-size:25px">
+            <button onclick="window.print();" class="btn btn-primary btn-lg">
+            <i class="fas fa-edit"></i> Print </button>
+            Total number of Reponse = <%= SurveyList.length %>
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+            <!-- Heading Row-->
+            <tr class="d-flex">
+                    <th class="text-align: left col-2"><%= survey.q1 %></th>
+                    <th class="text-align: left col-2"><%= survey.q2 %></th>
+                    <th class="text-align: left col-2"><%= survey.q3 %></th>
+                    <th class="text-align: left col-3"><%= survey.q4 %></th>
+                    <th class="text-align: left col-3"><%= survey.q5 %></th>
+            </tr>
+
+            <!-- Repeatable Templete Row-->
+
+            <% for(let count =0; count < SurveyList.length; count++) { %>
+                <tr class="d-flex">
+                        <td class="text-align: left col-2"><%= SurveyList[count].a1 %></td>
+                        <td class="text-align: left col-2"><%= SurveyList[count].a2 %></td>
+                        <td class="text-align: left col-2"><%= SurveyList[count].a3 %></td>
+                        <td class="text-align: left col-3"><%= SurveyList[count].a4 %></td>
+                        <td class="text-align: left col-3"><%= SurveyList[count].a5 %></td>
+
+                </tr>
+            <% } %>
+        </table>
+        </p>
+        </div>
+    </div>
+    </div>
+  </main>
+  
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>
+  
